@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { w3cwebsocket as W3CWebSocket } from "websocket";
+import CardModelInfo from "./CardModelInfo";
 
 const ChatComponent: React.FC = () => {
 	interface Message {
@@ -41,67 +42,7 @@ const ChatComponent: React.FC = () => {
 
 	return (
 		<div style={chatStyle}>
-			{showModelInfo && (
-				<div style={modelInfoOverlayStyle}>
-					<div style={modelInfoStyle}>
-						<p
-							style={{
-								fontWeight: 500,
-								color: "#4e4e4e",
-								fontSize: "18px",
-								padding: "1%",
-							}}
-						>
-							Model Information
-						</p>
-						<div style={{ padding: "0 10% 3% 10%" }}>
-							<p style={{ color: "#4e4e4e", fontSize: "13px", marginBottom: "10px", textAlign: "left" }}>
-								<span style={{ fontWeight: 500, color: "#4e4e4e", marginRight: "10px" }}>Type:</span> Fine-tuned Model
-							</p>
-							<p style={{ color: "#4e4e4e", marginBottom: "10px", textAlign: "left" }}>
-								<span style={{ fontWeight: 500, color: "#4e4e4e", fontSize: "14px", marginRight: "10px" }}>
-									Version:
-								</span>{" "}
-								1.0.0
-							</p>
-							<p style={{ color: "#4e4e4e", marginBottom: "10px", textAlign: "left" }}>
-								<span style={{ fontWeight: 500, color: "#4e4e4e", fontSize: "14px", marginRight: "10px" }}>Cost:</span>{" "}
-								$2 per million tokens
-							</p>
-							<p style={{ color: "#4e4e4e", marginBottom: "10px", textAlign: "left" }}>
-								<span style={{ fontWeight: 500, color: "#4e4e4e", fontSize: "14px", marginRight: "10px" }}>
-									Training Date:
-								</span>{" "}
-								January 1, 2024
-							</p>
-							<p style={{ color: "#4e4e4e", marginBottom: "10px", textAlign: "left" }}>
-								<span style={{ fontWeight: 500, color: "#4e4e4e", fontSize: "14px", marginRight: "10px" }}>
-									Performance:
-								</span>{" "}
-								99.9% accuracy, 98% precision, 97% recall
-							</p>
-							<p style={{ color: "#4e4e4e", marginBottom: "10px", textAlign: "left" }}>
-								<span style={{ fontWeight: 500, color: "#4e4e4e", fontSize: "14px", marginRight: "10px" }}>
-									Training Dataset:
-								</span>{" "}
-								Custom dataset with over 1 million entries
-							</p>
-							<p style={{ color: "#4e4e4e", marginBottom: "10px", textAlign: "left" }}>
-								<span style={{ fontWeight: 500, color: "#4e4e4e", fontSize: "14px", marginRight: "10px" }}>
-									Limitations:
-								</span>{" "}
-								May not perform well with sarcastic inputs
-							</p>
-							<p style={{ color: "#4e4e4e", marginBottom: "10px", textAlign: "left" }}>
-								<span style={{ fontWeight: 500, color: "#4e4e4e", fontSize: "14px", marginRight: "10px" }}>
-									Recommended Use:
-								</span>{" "}
-								Customer support chatbots, FAQ bots
-							</p>
-						</div>
-					</div>
-				</div>
-			)}
+			{showModelInfo && <CardModelInfo />}
 
 			<div style={{ ...contentStyle, borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}>
 				<div style={modelStyle}>
